@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-
+:root {
+    --padding: min(40px, 4vmin)
+}
 body {
     margin: 0;
     padding: 0;
@@ -8,72 +10,94 @@ body {
     font-size: larger;
     background-color: #f0f0f0;
 }
-.day-mood h1, .day-mood h2, .day-mood h3, .day-mood h4,.day-mood h5,.day-mood h6 {
-    font-family: 'Homemade Apple', cursive;
-    font-weight: 300;
-    font-size: 5rem;
-    color: #000;
+a {
+    text-decoration: none;
+    color: inherit;
+}
+#background {
+    position: fixed;
+    z-index: 1;
+    left: var(--padding);
+    right: var(--padding);
+    top: var(--padding);
+    bottom: var(--padding);
+    pointer-events: none;
+    overflow: hidden;
+    border: 1px solid black;
+}
+#header {
+    position: fixed;
+    z-index: 10;
+    left: calc(var(--padding)*2);
+    top: calc(var(--padding)*2);
+}
+#header nav {
+    margin-top: 50px;
+}
+#header nav ol {
+    list-style: none;
+    padding-inline-start: 0px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+#header p {
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
 }
 .name {
     font-family: 'Homemade Apple', cursive;
     font-size: 3rem;
     text-align: left;
     margin-top: 2rem;
-    padding: 1rem;
+    margin-bottom: 0px;
+    padding-left: 1rem;
+}
+@media (min-width: 1280px){
+    .name {
+        font-family: 'Homemade Apple', cursive;
+        font-size: 5rem;
+        text-align: left;
+        margin-top: 2rem;
+        margin-bottom: 0px;
+        padding: 1rem;
+    }
+    #header p {
+        font-size: 5rem;
+    }
+    #header nav ol a {
+        font-size: 3rem;
+    }
+    h3 {
+        font-size: 5rem;
+    }
 }
 
-.pages-container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    scroll-behavior: smooth;
-    overflow: auto;
-    scroll-snap-type: y mandatory;
 
+.section-wrapper {
+    z-index: 10;
+    right: calc(var(--padding)*2);
+    display: block;
 }
 .section {
-    display: block;
+    display: none;
+    position: absolute;
+    max-width: calc(100% - var(--padding)*4);
+    right: calc(var(--padding)*2);
+    bottom: calc(var(--padding)*2);
+}
+.skills-items {
     width: 100%;
-    height: 100vh;
-    background-size:  cover;
-    scroll-snap-align: start;
-    
-    z-index: 100;
+    display:flex;
+    flex-wrap: wrap;
 }
-.header p {
-    font-size: 1.5rem;
-    font-weight: 300;
-    margin-top: 1rem;
-    color: #181818;
-    text-align: center;
+.skill-item {
+    width: calc(100% / 3)
 }
-.page-1 {
-    display: flex;
-    height: 100vh;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    flex-shrink: 0;
-}
-.page-content {
-    padding-left: 50px;
-}
-    
-.about-me { width: 50% }
-.experience { width:50%; }
-.achievements { width:50% }
-
-
-.skills-content {
-}
-    
-    .header-skills { width:100% }
-    .skills-1 { width:30% }
-    .skills-2 { width:30% }
-    .skills-3 { width:30% }
-
-
 .night-mood {
+    display:none;
+}
+.mood-switcher {
     display:none;
 }
