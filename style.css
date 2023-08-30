@@ -73,6 +73,32 @@ a {
         font-size: 5rem;
     }
 }
+@media (max-width: 420px){
+    .name {
+        font-family: 'Homemade Apple', cursive;
+        font-size: 1rem;
+        text-align: left;
+        margin-top: 2rem;
+        margin-bottom: 0px;
+        padding: 1rem;
+    }
+    #header p {
+        font-size: 1rem;
+    }
+    #header nav ol a {
+        font-size: 1rem;
+    }
+    #header nav ol {
+        margin-top: 0px;
+        row-gap: 5px;
+    }
+    h3 {
+        font-size: 1rem;
+    }
+    .skill-item h4 {
+        font-size: 1rem;
+    }
+}
 
 
 .section-wrapper {
